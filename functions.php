@@ -7,6 +7,7 @@ function thd_setup_theme_supported_features() {
     add_theme_support( 'post-formats' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'menus' );
 
     add_theme_support( 'customize-selective-refresh-widgets' );
     add_theme_support( 'editor-style' );
@@ -36,11 +37,22 @@ function thd_setup_theme_supported_features() {
         ) );
     }
 
+
+
 }
 
 add_action( 'after_setup_theme', 'thd_setup_theme_supported_features' );
 
 
+function tdh_menu(){
+
+  register_nav_menus( array(
+    'header_menu' => __( 'Header Menu', 'The Home Depot' ),
+  ) );
+
+}
+
+add_action( 'widgets_init', 'tdh_menu' );
 function thd_widgets_register() {
 
 	register_sidebar( array(

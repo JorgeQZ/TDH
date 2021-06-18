@@ -11,10 +11,16 @@ html, body {
     margin: 0;
 }
 
-.wrapper-content {
-    width: 100%;
-    background-color: beige;
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
+.wrapper-content {
+    width: 100%;
+    background-color: black;
+}
+
+@import "header";
 @import "footer";
 @import "social_widget";

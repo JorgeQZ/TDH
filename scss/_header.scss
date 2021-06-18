@@ -1,0 +1,152 @@
+header {
+    padding: 20px 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    .header-container {
+        margin: 0 auto;
+        max-width: 1280px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            .header_logo {
+                width: 95px;
+                height: auto;
+            }
+        }
+
+        .header-menu-container {
+            .menu {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                list-style: none;
+
+                > .menu-item {
+                    position: relative;
+                    margin-left: 45px;
+                    padding-right: 25px;
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+
+                    a {
+                        font-size: 18px;
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                    &.menu-item-has-children {
+                        &:after {
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            border-left: 12px solid transparent;
+                            border-right: 12px solid transparent;
+                            border-bottom: 15px solid #eaeae9;
+                            border-radius: 0px;
+                            left: 0;
+                            top: 35px;
+                        }
+
+                        &:before {
+                            content: '';
+                            width: 13px;
+                            height: 20px;
+                            position: absolute;
+                            right: 0;
+                            background-image: url(../img/arrow-down.png);
+                            background-position: center center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                        }
+
+                        .sub-menu {
+                            top: 50px;
+                            margin-left: 0;
+                            position: absolute;
+                            list-style: none;
+                            columns: 2;
+                            background-color: #eaeae9;
+                            width: fit-content;
+                            padding: 30px 15px;
+                            border-radius: 20px;
+                            margin-left: -80px;
+
+                            .menu-item {
+                                margin: 0 5px;
+                                padding-left: 60px;
+                                color: white;
+                                height: 60px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                margin-bottom: 10px;
+                                position: relative;
+
+                                a {
+                                    color: black;
+                                    font-weight: bold;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    width: 60px;
+                                    height: 60px;
+                                    position: absolute;
+                                    left: -8px;
+                                    border-radius: 50%;
+                                    background-position: center;
+                                    background-size: cover;
+                                }
+
+                                &.icon {
+                                    &-energy {
+                                        &::before {
+                                            background-image: url(../img/icon-energy.png);
+                                        }
+                                    }
+
+                                    &-aqua {
+                                        &::before {
+                                            background-image: url(../img/icon-aqua.png);
+                                        }
+                                    }
+
+                                    &-air {
+                                        &::before {
+                                            background-image: url(../img/icon-air.png);
+                                        }
+                                    }
+
+                                    &-health {
+                                        &::before {
+                                            background-image: url(../img/icon-health.png);
+                                        }
+                                    }
+
+                                    &-wood {
+                                        &::before {
+                                            background-image: url(../img/icon-wood.png);
+                                        }
+                                    }
+
+                                    &-economy {
+                                        &::before {
+                                            background-image: url(../img/icon-economy.png);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
