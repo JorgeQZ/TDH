@@ -1,19 +1,21 @@
 header {
     padding: 20px 30px;
+    padding-top: 50px;
     position: fixed;
     width: 100%;
     z-index: 100;
+    background-color: grey;
 
     .header-container {
         margin: 0 auto;
         max-width: 1280px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
 
         a {
             .header_logo {
-                width: 95px;
+                width: 140px;
                 height: auto;
             }
         }
@@ -28,16 +30,23 @@ header {
                 > .menu-item {
                     position: relative;
                     margin-left: 45px;
-                    padding-right: 25px;
+                    padding-right: 30px;
 
                     &:last-child {
                         padding-right: 0;
                     }
 
-                    a {
-                        font-size: 18px;
+                    > a {
+                        font-size: 22px;
                         color: white;
                         text-decoration: none;
+                        transition: all 300ms;
+                        padding-bottom: 3px;
+                        border-bottom: 2px solid transparent;
+
+                        &:hover {
+                            border-bottom: 2px solid #ff671d;
+                        }
                     }
 
                     &.menu-item-has-children {
@@ -48,7 +57,7 @@ header {
                             position: absolute;
                             border-left: 12px solid transparent;
                             border-right: 12px solid transparent;
-                            border-bottom: 15px solid #eaeae9;
+                            border-bottom: 17px solid #eaeae9;
                             border-radius: 0px;
                             left: 0;
                             top: 35px;
@@ -56,10 +65,11 @@ header {
 
                         &:before {
                             content: '';
-                            width: 13px;
+                            width: 15px;
                             height: 20px;
                             position: absolute;
-                            right: 0;
+                            right: -5px;
+                            margin-top: 4px;
                             background-image: url(../img/arrow-down.png);
                             background-position: center center;
                             background-size: contain;
@@ -74,15 +84,16 @@ header {
                             columns: 2;
                             background-color: #eaeae9;
                             width: fit-content;
-                            padding: 30px 15px;
+                            padding: 25px 15px;
                             border-radius: 20px;
                             margin-left: -80px;
+                            box-shadow: 0px 18px 12px 1px rgba(black, 0.5);
 
                             .menu-item {
                                 margin: 0 5px;
-                                padding-left: 60px;
+                                padding-left: 50px;
                                 color: white;
-                                height: 60px;
+                                height: 50px;
                                 display: flex;
                                 align-items: center;
                                 justify-content: flex-start;
@@ -92,12 +103,14 @@ header {
                                 a {
                                     color: black;
                                     font-weight: bold;
+                                    font-size: 18px;
+                                    text-decoration: none;
                                 }
 
                                 &::before {
                                     content: '';
-                                    width: 60px;
-                                    height: 60px;
+                                    width: 50px;
+                                    height: 50px;
                                     position: absolute;
                                     left: -8px;
                                     border-radius: 50%;
