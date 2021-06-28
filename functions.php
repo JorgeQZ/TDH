@@ -102,7 +102,7 @@ add_action( 'widgets_init', 'thd_widgets_register' );
 
 function thd_theme_name_scripts() {
     wp_enqueue_style( 'generals', get_template_directory_uri().'/css/generals.css', array(), filemtime(get_template_directory_uri().'/css/generals.css') );
-    // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'generals', get_template_directory_uri() . '/js/generals.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'thd_theme_name_scripts' );
 ?>

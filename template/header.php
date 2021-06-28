@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header>
+<header class="main-header">
     <div class="header-container">
         <div class="logo">
             <?php
