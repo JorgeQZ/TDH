@@ -101,8 +101,53 @@ add_action( 'widgets_init', 'thd_widgets_register' );
 
 
 function thd_theme_name_scripts() {
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), null, true);
     wp_enqueue_style( 'generals', get_template_directory_uri().'/css/generals.css', array(), filemtime(get_template_directory_uri().'/css/generals.css') );
     wp_enqueue_script( 'generals', get_template_directory_uri() . '/js/generals.js', array(), '1.0.0', true );
+
+    if( is_front_page() ):
+      wp_enqueue_style( 'notas', get_template_directory_uri().'/css/notas.css', array(), filemtime(get_template_directory_uri().'/css/notas.css') );
+      wp_enqueue_style( 'owl.carousel.min', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), '1.1', 'all');
+      wp_enqueue_style( 'owl.theme.default.min', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), '1.1', 'all');
+      wp_enqueue_script('owl.carousel.min.js', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'),filemtime( get_stylesheet_directory() . '/js/owl.carousel.min.js' ), false);
+    endif;
+
 }
 add_action( 'wp_enqueue_scripts', 'thd_theme_name_scripts' );
+
+
+
+add_action( 'init', 'thd_post_type_notas' );
+function thd_post_type_notas() {
+  $labels = array(
+    'name'               => __( 'Notas' ),
+    'singular_name'      => __( 'Notas' ),
+    'add_new'            => __( 'Agregar Nueva Nota' ),
+    'add_new_item'       => __( 'Agregar Nueva Nota' ),
+    'edit_item'          => __( 'Editar Nota' ),
+    'new_item'           => __( 'Nueva Nota' ),
+    'all_items'          => __( 'Todas Las Notas' ),
+    'view_item'          => __( 'Ver Nota' ),
+    'search_items'       => __( 'Buscar Nota' ),
+    'not_found' => 'No se han encontrado notas',
+		'not_found_in_trash' => 'No se han encontrado notas en la papelera'
+  );
+ 
+  $args = array(
+    'labels'            => $labels,
+    'description'       => 'Información especifica de cada nota',
+    'public'            => true,
+    'menu_position'     => 5,
+    'supports'          => array( 'title', 'page-attributes', 'editor', 'thumbnail', 'excerpt', 'comments'),
+    'has_archive'       => true,
+    'show_in_admin_bar' => true,
+    'show_in_nav_menus' => true,
+    'show_in_rest'      => true,
+    'query_var'         => 'nota'
+  );
+
+  register_post_type( 'nota', $args);
+}
+
 ?>
