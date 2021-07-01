@@ -36,8 +36,11 @@ header {
                                 height: 12px;
                                 width: 12px;
                                 padding: 2px;
+                                padding-top: 4px;
+                                padding-bottom: 0px;
                                 margin-top: 3px;
-                                background-position: center center;
+                                background-position: center 6px;
+                                background-size: 10px;
                             }
 
                             .sub-menu {
