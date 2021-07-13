@@ -6,8 +6,8 @@
     $post_type = get_post_type();
     if ($post_type === "proy_sustentables"){
         $post_type_obj = get_post_type_object($post_type);
-        echo $post_type_obj->labels->singular_name; //Ice Cream.
-        echo $post_type_obj->labels->name; //Ice Creams.
+        echo $post_type_obj->labels->singular_name;
+        echo $post_type_obj->labels->name;
     }
 
 
