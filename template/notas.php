@@ -58,8 +58,7 @@
         responsive: {
             0: {
                 items: 1,
-                nav: false,
-                stagePadding: 0,
+                margin: 0,
             },
             768: {
                 items: 2,

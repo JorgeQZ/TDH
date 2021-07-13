@@ -1,6 +1,6 @@
 <?php get_template_part( 'template/header' ); ?>
 
-<div style="height: 600px;"></div>
+<div style="height: 600px; background: gray;"></div>
 
 <div class="wrapper-content">
     <div class="container">
@@ -15,6 +15,13 @@
     ?>
 
     </div>
+
+    <?php
+    if( is_front_page() ):
+            get_template_part( 'template/eco-opciones-home' );
+        endif;
+    ?>
+    
 </div>
 
 <?php

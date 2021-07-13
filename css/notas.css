@@ -9,6 +9,12 @@
 
 .contenerdor-general-notas h2 {
   color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.contenerdor-general-notas .contenedor-notas {
+  margin-top: 35px;
 }
 
 .contenerdor-general-notas .contenedor-notas .contenedor-nota {
@@ -109,4 +115,16 @@
 .contenerdor-general-notas .contenedor-notas .owl-nav button:hover img {
   -webkit-transform: scale(0.6);
           transform: scale(0.6);
+}
+
+@media screen and (max-width: 767px) {
+  .contenerdor-general-notas .contenedor-notas .owl-nav {
+    margin-top: 10px;
+  }
+  .contenerdor-general-notas .contenedor-notas .owl-nav button {
+    position: initial;
+    top: initial;
+    -webkit-transform: none;
+            transform: none;
+  }
 }

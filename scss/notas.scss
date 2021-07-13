@@ -7,8 +7,11 @@
     background-repeat: no-repeat;
     h2{
         color: white;
+        text-transform: uppercase;
+        font-size: 20px;
     }
     .contenedor-notas{
+        margin-top: 35px;
         .contenedor-nota{
             background: white;
             border-radius: 20px;
@@ -85,4 +88,21 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 767px){
+
+    .contenerdor-general-notas{
+        .contenedor-notas{
+            .owl-nav {
+                margin-top: 10px;
+                button {
+                    position: initial;
+                    top: initial;
+                    transform: none;
+                }
+            }
+        }
+    }
+
 }

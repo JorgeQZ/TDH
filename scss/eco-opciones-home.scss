@@ -1,0 +1,114 @@
+.contenerdor-general-eco_opciones-home{
+    position: absolute;
+    top: -125px;
+    left: 0;
+    width: 100%;
+    .contenedor-eco_opciones-home{
+        width: 80%;
+        margin: 0 auto;
+        .contenedor-eco_opcion{
+            .cont-icono{
+                position: relative;
+                img{
+                    width: 100%;
+                }
+                .cont-info{
+                    position: absolute;
+                    bottom: -115px;
+                    left: -100px;
+                    background: #709303;
+                    padding: 5px 22px;
+                    border-radius: 20px;
+                    opacity: 0;
+                    width: 290px;
+                    padding: 10px;
+                    opacity: 0;
+                    transition: all .3s;
+                    h2{
+                        font-size: 12px;
+                        color: white;
+                        margin: 0;
+                        margin-bottom: 3px;
+                        text-align: center;
+                        text-transform: initial;
+                    }
+                    p{
+                        text-align: center;
+                        font-size: 12px;
+                        color: white;
+                        margin: 0;
+                    }
+                }
+                &:hover{
+                    .cont-info{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .owl-stage-outer{
+            overflow: visible;
+        }
+        .owl-item{
+            opacity: 0;
+            &.active{
+                opacity: 1;
+            }
+        }
+        .owl-nav {
+            margin: 0;
+            button {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: calc(50% - 10px);
+                transform: translateY(-50%);
+                transition: all 0.3s;
+                &.owl-prev {
+                    left: -70px;
+                }
+                &.owl-next {
+                    right: -70px;
+                }
+                img {
+                    width: 25px;
+                    transition: all 0.3s;
+                }
+                &:hover {
+                    background: #709303;
+                    img {
+                        transform: scale(0.6);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    .contenerdor-general-eco_opciones-home{
+        width: 100%;
+        .contenedor-eco_opciones-home{
+            width: 60%;
+            .contenedor-eco_opcion{
+                .cont-icono{
+                    .cont-info{
+                        bottom: -115px;
+                        left: -70px;
+                        padding: 5px 22px;
+                        width: 220px;
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
