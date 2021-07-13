@@ -1,11 +1,16 @@
-<?php get_template_part( 'template/header' ); ?>
-
-<div style="height: 600px;"></div>
-
+<?php get_template_part( 'template/header','single' ); ?>
 <div class="wrapper-content">
     <div class="container">
 
     <?php
+    $post_type = get_post_type();
+    if ($post_type === "proy_sustentables"){
+        $post_type_obj = get_post_type_object($post_type);
+        echo $post_type_obj->labels->singular_name; //Ice Cream.
+        echo $post_type_obj->labels->name; //Ice Creams.
+    }
+
+
     if(have_posts()):
         while(have_posts()):
             the_post();

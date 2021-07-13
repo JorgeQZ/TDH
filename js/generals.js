@@ -1,6 +1,14 @@
+//Burguer Button
+let burguer_button = document.getElementsByClassName('burguer-button')[0];
+burguer_button.addEventListener('click', function (e) {
+    e.preventDefault();
+    this.classList.toggle('active');
+    document.getElementsByClassName('header-menu-container')[0].classList.toggle('active');
+});
+
+console.log(burguer_button);
+
 // Header Shrinking
-
-
 let scrollPosition = window.scrollY;
 let header_nav = document.getElementsByClassName('main-header')[0];
 
@@ -24,7 +32,7 @@ link_empty.forEach((item) => {
 
         let shown_elements = document.querySelectorAll('.shown');
         for (let i = 0; i < shown_elements.length; i++) {
-            if (shown_elements[i] != item.querySelectorAll('.sub-menu')[0]) {
+            if (shown_elements[i] !== item.querySelectorAll('.sub-menu')[0]) {
                 shown_elements[i].classList.remove('shown');
             }
         }
