@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo get_bloginfo(); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<body>
 <header class="main-header">
     <div class="header-container">
         <div class="logo">
@@ -36,11 +35,3 @@
         </nav>
     </div>
 </header>
-
-<?php
-$post_type = get_post_type();
-if($post_type === "page"){
-    $banner_slider = sanitize_text_field( get_field('banner_slider_revolution') );
-    echo do_shortcode($banner_slider);
-}
-?>

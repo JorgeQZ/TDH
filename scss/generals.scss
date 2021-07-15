@@ -17,31 +17,6 @@ html, body {
     padding: 0 80px;
 }
 
-@import "header";
-@import "footer";
-@import "social_widget";
-
-/*
-.wrapper-content {
-    width: 100%;
-    padding: 100px 0;
-    background-image: url(../img/bg-nuestroimpacto.jpg);
-    background-position: center top;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    position: relative;
-    h2{
-        color: #ff671d;
-        font-size: 20px;
-        text-transform: uppercase;
-    }
-    p{
-        text-align: justify;
-        font-size: 18px;
-    }
-}
-*/
-
 .wp-block-uagb-section{
     max-width: unset !important;
     padding: 100px 0 !important;
@@ -68,14 +43,94 @@ html, body {
     }
 }
 
-@media screen and (max-width: 767px){
 
-    .wp-block-uagb-section{
-        &.wrapper-content{
-            .uagb-section__inner-wrap{
-                padding: 0 30px;
+.title {
+    border-bottom: 2px solid white;
+    padding: 10px 0;
+}
+
+
+.wrapper-contact {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    .column {
+        margin: 0 auto;
+        padding: 10px;
+
+        &:first-child {
+            width: 40%;
+        }
+
+        &:nth-child(2) {
+            width: 60%;
+        }
+
+        &:nth-child(3) {
+            width: 100%;
+        }
+
+        label {
+            margin-bottom: 25px;
+            display: block;
+            color: white;
+            font-size: 16px;
+
+            input, textarea {
+                appearance: none;
+                border: none;
+                margin-top: 4px;
+                display: block;
+                width: 100%;
+                border-radius: 12px;
+                padding: 10px;
+            }
+
+            input {
+                height: 40px;
+            }
+
+            textarea {
+                height: 218px;
             }
         }
-    }
 
+        input[type='submit'] {
+            appearance: none;
+            border: none;
+            height: 45px;
+            color: white;
+            padding: 15px 60px;
+            background-color: #ee8222;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            line-height: 1;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            border-radius: 15px;
+        }
+    }
 }
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+    border-color: white;
+    color: white;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+@import "header";
+@import "footer";
+@import "social_widget";
