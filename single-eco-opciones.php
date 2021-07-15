@@ -2,9 +2,6 @@
 
 <div style="height: 600px;"></div>
 
-<div class="wrapper-content">
-    <div class="container">
-
     <?php
     if(have_posts()):
         while(have_posts()):
@@ -14,27 +11,24 @@
     endif;
     ?>
 
-    </div>
-</div>
-
-<?php if(have_rows('productos')): ?>
-    <div class="contenedor-general-productos">
-    <div class="container">
-        <div class="contenedor-productos">
-            <?php while(have_rows('productos')): the_row(); ?>
-                <div class="cont-producto">
-                    <div class="cont-img">
-                        <img src="<?php the_sub_field('imagen'); ?>" alt="">
+    <?php if(have_rows('productos')): ?>
+        <div class="contenedor-general-productos">
+        <div class="container">
+            <div class="contenedor-productos">
+                <?php while(have_rows('productos')): the_row(); ?>
+                    <div class="cont-producto">
+                        <div class="cont-img">
+                            <img src="<?php the_sub_field('imagen'); ?>" alt="">
+                        </div>
+                        <div class="cont-info">
+                            <?php the_sub_field('contenido'); ?>
+                        </div>
                     </div>
-                    <div class="cont-info">
-                        <?php the_sub_field('contenido'); ?>
-                    </div>
-                </div>
-            <?php endwhile; ?>
+                <?php endwhile; ?>
+            </div>
         </div>
     </div>
-</div>
-<?php endif; ?>
+    <?php endif; ?>
 
 <!--
 <div class="contenedor-general-productos">
@@ -91,12 +85,12 @@
 </div>
 -->
 
-<?php 
-$postType = get_post_type_object(get_post_type());
-if ($postType->labels->singular_name == "Eco Opciones") {
-    get_template_part( 'template/eco-opciones' );
-}
-?>
+    <?php 
+    $postType = get_post_type_object(get_post_type());
+    if ($postType->labels->singular_name == "Eco Opciones") {
+        get_template_part( 'template/eco-opciones' );
+    }
+    ?>
 
 <?php
 get_template_part( 'template/footer' );

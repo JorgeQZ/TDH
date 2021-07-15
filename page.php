@@ -2,8 +2,8 @@
 
 <div style="height: 600px; background: gray;"></div>
 
-<div class="wrapper-content">
-    <div class="container">
+<!-- <div class="wrapper-content">
+    <div class="container"> -->
 
     <?php
     if(have_posts()):
@@ -14,7 +14,7 @@
     endif;
     ?>
 
-    </div>
+    <!-- </div> -->
 
     <?php
     if( is_front_page() ):
@@ -22,13 +22,13 @@
         endif;
     ?>
     
-</div>
+<!-- </div> -->
 
-<?php
-    if( is_front_page() ):
-        get_template_part( 'template/notas' );
-    endif;
-?>
+    <?php
+        if( is_front_page() ):
+            get_template_part( 'template/notas' );
+        endif;
+    ?>
 
 <?php
 get_template_part( 'template/footer' );
