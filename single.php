@@ -1,6 +1,6 @@
-<?php get_template_part( 'template/header','single' ); ?>
-<div class="wrapper-content">
-    <div class="container">
+<?php get_template_part( 'template/header' ); ?>
+
+<div class="contenedor-page">
 
     <?php
     $post_type = get_post_type();
@@ -19,7 +19,6 @@
     endif;
     ?>
 
-    </div>
 </div>
 
 <?php

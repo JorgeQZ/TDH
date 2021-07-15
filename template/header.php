@@ -38,9 +38,9 @@
 </header>
 
 <?php
-$post_type = get_post_type();
-if($post_type === "page"){
+//$post_type = get_post_type();
+//if($post_type === "page"){
     $banner_slider = sanitize_text_field( get_field('banner_slider_revolution') );
     echo do_shortcode($banner_slider);
-}
+//}
 ?>

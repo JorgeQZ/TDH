@@ -1,6 +1,4 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/eco-opciones-home.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/owl.carousel.min.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/owl.theme.default.min.css">
 
 <div class="contenerdor-general-eco_opciones-home">
     <div class="container">
@@ -29,9 +27,6 @@
         </div>
     </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri() ?>/js/owl.carousel.min.js"></script>
 
 <script>
     $('.contenedor-eco_opciones-home').owlCarousel({
