@@ -145,10 +145,10 @@ function thd_post_type_notas() {
     'show_in_admin_bar' => true,
     'show_in_nav_menus' => true,
     'show_in_rest'      => true,
-    'query_var'         => 'nota'
+    'query_var'         => 'notas'
   );
 
-  register_post_type( 'nota', $args);
+  register_post_type( 'notas', $args);
 }
 
 

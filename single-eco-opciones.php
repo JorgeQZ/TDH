@@ -1,7 +1,5 @@
 <?php get_template_part( 'template/header' ); ?>
 
-<div style="height: 600px;"></div>
-
     <?php
     if(have_posts()):
         while(have_posts()):

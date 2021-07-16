@@ -12,7 +12,7 @@
         ?>
         <div class="contenedor-eco_opcion">
             <div class="cont-icono">
-                <img src="<?php echo get_template_directory_uri() ?>/img/icon-energy.png" alt="">
+                <img src="<?php echo the_field("icono"); ?>" alt="">
                 <div class="cont-info">
                     <h2> <?php the_title(); ?> </h2>
                     <p>
