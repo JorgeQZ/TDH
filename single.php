@@ -1,8 +1,8 @@
-<?php get_template_part('template/header', 'single'); ?>
-<div class="wrapper-content">
-    <div class="container">
+<?php get_template_part('template/header'); ?>
 
-        <?php
+<div class="contenedor-page">
+
+    <?php
         $post_type = get_post_type();
         if ($post_type === "proy_sustentables") {
             $post_type_obj = get_post_type_object($post_type);
@@ -19,7 +19,6 @@
         endif;
     ?>
 
-    </div>
 </div>
 
 <?php

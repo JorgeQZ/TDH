@@ -3,6 +3,29 @@
     <div class="container">
         <h2>Notas</h2>
         <div class="contenedor-notas owl-carousel owl-theme">
+
+        <?php
+        $args = array( 'post_type' => 'notas', 'post_status' => 'publish', 'posts_per_page' => -1, 'orderby'=>'fecha', 'order'=>'ASC');
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post();
+        $thumbID = get_post_thumbnail_id( $post->ID );
+        $imgDestacada = wp_get_attachment_url( $thumbID );
+        ?>
+
+            <div class="contenedor-nota">
+                <div class="cont-img" style="background-image: url(<?php echo $imgDestacada; ?>);"></div>
+                <div class="cont-info">
+                    <h3><?php the_title(); ?></h3>
+                    <p><?php echo get_the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>"> Continuar leyendo </a>
+                </div>
+            </div>
+        
+        <?php
+            endwhile;
+        ?>
+
+        <!--
             <div class="contenedor-nota">
                 <div class="cont-img" style="background-image: url(https://www.caintra.org.mx/wp-content/uploads/2020/11/Comercio-exterior.jpg);"></div>
                 <div class="cont-info">
@@ -43,6 +66,7 @@
                     <a href="#"> Continuar leyendo </a>
                 </div>
             </div>
+        -->
         </div>
     </div>
 </div>
@@ -58,8 +82,7 @@
         responsive: {
             0: {
                 items: 1,
-                nav: false,
-                stagePadding: 0,
+                margin: 0,
             },
             768: {
                 items: 2,

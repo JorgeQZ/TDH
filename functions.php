@@ -119,8 +119,6 @@ function thd_theme_name_scripts()
 }
 add_action('wp_enqueue_scripts', 'thd_theme_name_scripts');
 
-
-
 add_action('init', 'thd_post_type_notas');
 function thd_post_type_notas()
 {
@@ -148,10 +146,44 @@ function thd_post_type_notas()
     'show_in_admin_bar' => true,
     'show_in_nav_menus' => true,
     'show_in_rest'      => true,
-    'query_var'         => 'nota'
+    'query_var'         => 'notas'
   );
 
-    register_post_type('nota', $args);
+    register_post_type('notas', $args);
+}
+
+
+add_action('init', 'thd_post_type_eco_opciones');
+function thd_post_type_eco_opciones()
+{
+    $labels = array(
+    'name'               => __('Eco Opciones'),
+    'singular_name'      => __('Eco Opciones'),
+    'add_new'            => __('Agregar Nueva Eco Opción'),
+    'add_new_item'       => __('Agregar Nueva Eco Opción'),
+    'edit_item'          => __('Editar Eco Opción'),
+    'new_item'           => __('Nueva Eco Opción'),
+    'all_items'          => __('Todas Las Eco Opciones'),
+    'view_item'          => __('Ver Eco Opción'),
+    'search_items'       => __('Buscar Eco Opción'),
+    'not_found' => 'No se han encontrado eco opciones',
+        'not_found_in_trash' => 'No se han encontrado eco opciones en la papelera'
+  );
+
+    $args = array(
+    'labels'            => $labels,
+    'description'       => 'Información especifica de cada eco opción',
+    'public'            => true,
+    'menu_position'     => 5,
+    'supports'          => array( 'title', 'page-attributes', 'editor', 'thumbnail', 'excerpt', 'comments'),
+    'has_archive'       => true,
+    'show_in_admin_bar' => true,
+    'show_in_nav_menus' => true,
+    'show_in_rest'      => true,
+    'query_var'         => 'eco-opciones'
+  );
+
+    register_post_type('eco-opciones', $args);
 }
 
 function load_proy_sustentables()
