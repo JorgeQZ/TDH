@@ -1,0 +1,74 @@
+@import "variables";
+
+.wrapper-cat-options {
+    .see-more {
+        color: $thd-green;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        width: fit-content;
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 40px;
+
+        &:before {
+            content: '';
+            width: 35px;
+            height: 25px;
+            background-image: url(../img/arrow-down-green.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: calc(50% - 17.5px);
+        }
+    }
+
+    ul {
+        padding: 0;
+        max-width: 800px;
+        margin: 0 auto;
+
+        .categories-link-button {
+            list-style: none;
+            background-color: #789811;
+            color: white;
+            margin-bottom: 40px;
+            padding: 10px 30px;
+            border-radius: 30px;
+            box-sizing: border-box;
+            transition: background-color 200ms ease-in;
+            text-transform: uppercase;
+            font-weight: 300;
+            position: relative;
+            font-size: 24px;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 30px;
+                background-image: url(../img/arrow-right.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                right: 10px;
+                top: calc(50% - 15px);
+            }
+
+            &:hover {
+                background-color: $thd-orange;
+            }
+        }
+    }
+}
+
+.wrapper-cat-content {
+    .line-banner {
+        background-color: $thd-green;
+        color: white;
+    }
+}

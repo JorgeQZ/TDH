@@ -117,6 +117,17 @@ html, body {
     color: white;
 }
 
+//Custom buttons
+.thd-button-project {
+    a {
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-weight: thin;
+        letter-spacing: 1px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .container {
         padding: 0 30px;
