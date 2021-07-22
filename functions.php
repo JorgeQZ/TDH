@@ -203,15 +203,55 @@ add_action('wp_ajax_fetch_cat', 'fetch_tdh_proy_cat');
 
 function fetch_tdh_proy_cat()
 {
-    $args_cats = array(
+    $args_cat = array(
         'taxonomy' => 'categoria_proyectos',
+        'hide_empty' => 1,
         'orderby' => 'name',
-        'order' => 'DESC'
+        'order' => 'ASC'
     );
 
-    $cats = get_categories($args_cats);
+    $cats = get_categories($args_cat);
 
-    header('Content-type: application/json; charset=utf-8');
+    // header('Content-type: application/json; charset=utf-8');
     echo json_encode($cats);
+    exit;
+}
+
+
+add_action('wp_ajax_nopriv_fetch_content', 'fetch_tdh_proy_content');
+add_action('wp_ajax_fetch_content', 'fetch_tdh_proy_content');
+
+function fetch_tdh_proy_content()
+{
+    $data = $_POST['data_set'];
+    $args_post = array(
+        'post_type' => 'proy_sustentables',
+        'orderby'  => 'DATE',
+        'order' => 'DESC',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'categoria_proyectos',
+                'field' => 'slug',
+                'terms' => $data['slug'],
+            )
+        ),
+    );
+
+    $content = new WP_Query($args_post);
+    $content_array = array();
+    foreach ($content->posts as $post) {
+        $featured_image = get_the_post_thumbnail_url($post->ID);
+        $data = array(
+            'title' => $post->post_title,
+            'url' => $post->guid,
+            'id' => $post->ID,
+            'featured_image' => $featured_image
+        );
+
+        array_push($content_array, $data);
+    }
+
+    // header('Content-type: application/json; charset=utf-8');
+    echo json_encode($content_array);
     exit;
 }

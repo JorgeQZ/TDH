@@ -5,18 +5,25 @@
     <?php
         $post_type = get_post_type();
         if ($post_type === "proy_sustentables") {
-            $post_type_obj = get_post_type_object($post_type);
-            echo $post_type_obj->labels->singular_name;
-            echo $post_type_obj->labels->name;
+            echo get_field('banner-slider');
+            echo '<div class="container">';
+            if (have_posts()):
+                while (have_posts()):
+                    the_post();
+            the_content();
+            endwhile;
+            endif;
+            echo '</div>';
+        } else {
+            if (have_posts()):
+            while (have_posts()):
+                the_post();
+            the_content();
+            endwhile;
+            endif;
         }
 
 
-        if (have_posts()):
-            while (have_posts()):
-                the_post();
-                the_content();
-            endwhile;
-        endif;
     ?>
 
 </div>
