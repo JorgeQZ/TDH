@@ -100,7 +100,11 @@
                 $('#wrapper-cat-options').animate({
                     'opacity': 0,
                     'height': 0,
-                    'padding': 0,
+                    'padding': 0
+                }, 1000);
+
+                setTimeout(function () {
+                    $('#wrapper-cat-options').hide();
                 }, 1000);
 
                 $('#wrapper-cat-content').show();
