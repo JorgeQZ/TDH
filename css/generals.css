@@ -312,6 +312,14 @@ img {
   color: white;
 }
 
+.thd-button-project a {
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-weight: thin;
+  letter-spacing: 1px;
+}
+
 @media screen and (max-width: 991px) {
   .items-especiales .wp-block-column .wp-block-image::before {
     display: none;

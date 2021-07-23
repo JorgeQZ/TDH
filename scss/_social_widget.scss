@@ -57,7 +57,7 @@
                 padding: 0;
                 font-size: 14px;
                 font-weight: bold;
-                color: $color-text;
+                color: $thd-orange;
                 height: 12px;
             }
 
@@ -68,12 +68,12 @@
                 line-height: 12px;
                 font-size: 12px;
                 text-decoration: none;
-                color: $color-text;
+                color: $thd-orange;
                 font-weight: 500;
                 transition: $time-transition;
 
                 &:hover {
-                    color: $color-text;
+                    color: $thd-orange;
                 }
             }
         }

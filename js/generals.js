@@ -6,7 +6,6 @@ burguer_button.addEventListener('click', function (e) {
     document.getElementsByClassName('header-menu-container')[0].classList.toggle('active');
 });
 
-console.log(burguer_button);
 
 // Header Shrinking
 let scrollPosition = window.scrollY;
