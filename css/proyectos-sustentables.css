@@ -108,11 +108,11 @@
 .wrapper-cat-content .wrapper-cat-content .line-banner {
   background-color: #789811;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
-  padding: 5px 20px;
+  padding: 10px 20px;
   position: relative;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .wrapper-cat-content .wrapper-cat-content .grid-posts .item {
-  height: 300px;
+  height: 250px;
   text-decoration: none;
   background-color: #ff671d;
   background-position: center;
