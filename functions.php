@@ -251,6 +251,7 @@ function thd_register_proyectos_sustentables()
         "rewrite" => [ "slug" => "proy_sustentables", "with_front" => true ],
         "query_var" => true,
         "menu_position" => 20,
+        "menu_icon" => "dashicons-admin-site",
         "supports" => [ "title", "editor", "thumbnail", "author", "page-attributes", "post-formats" ],
         "taxonomies" => [ "categoria_proyectors" ],
         "show_in_graphql" => false,
@@ -318,12 +319,15 @@ add_action('init', 'thd_register_tax_proy_sust');
 
 function load_proy_sustentables()
 {
-    wp_enqueue_script('proyectos-sustentables', get_template_directory_uri().'/js/proyectos_sustentables.js', array('jquery'), '1.0', true);
+    if (is_page_template('page-proyectos-sustentables.php')):
+
+        wp_enqueue_script('proyectos-sustentables', get_template_directory_uri().'/js/proyectos_sustentables.js', array('jquery'), '1.0', true);
 
     wp_localize_script('proyectos-sustentables', 'ajax_query_vars', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce'  => wp_create_nonce('wp_rest')
-    ));
+        ));
+    endif;
 }
 
 add_action('wp_enqueue_scripts', 'load_proy_sustentables');
@@ -354,10 +358,13 @@ add_action('wp_ajax_fetch_content', 'fetch_tdh_proy_content');
 function fetch_tdh_proy_content()
 {
     $data = $_POST['data_set'];
+    $paged = (isset($data['pageNum'])) ? $data['pageNum'] : 1;
     $args_post = array(
         'post_type' => 'proy_sustentables',
         'orderby'  => 'DATE',
         'order' => 'DESC',
+        'posts_per_page' => 3,
+        'paged' => $paged,
         'tax_query' => array(
             array(
                 'taxonomy' => 'categoria_proyectos',
@@ -375,11 +382,15 @@ function fetch_tdh_proy_content()
             'title' => $post->post_title,
             'url' => $post->guid,
             'id' => $post->ID,
-            'featured_image' => $featured_image
+            'featured_image' => $featured_image,
+            'pageNumber' => $paged
+
         );
 
         array_push($content_array, $data);
     }
+
+    wp_reset_postdata();
 
     // header('Content-type: application/json; charset=utf-8');
     echo json_encode($content_array);
