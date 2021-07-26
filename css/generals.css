@@ -199,6 +199,19 @@ img {
   text-decoration: none;
 }
 
+.wp-block-kadence-advancedgallery .kb-gallery-ul .kadence-blocks-gallery-item .kadence-blocks-gallery-item__caption {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(9), .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10), .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) {
+  width: calc(100% / 3);
+}
+
+.wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(9) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) .kb-gallery-image-contain {
+  padding: 36% 0 !important;
+}
+
 .title {
   border-bottom: 2px solid white;
   padding: 10px 0;
@@ -307,6 +320,27 @@ img {
   letter-spacing: 1px;
 }
 
+@media screen and (max-width: 991px) {
+  .items-especiales .wp-block-column .wp-block-image::before {
+    display: none;
+  }
+  .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(9) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) .kb-gallery-image-contain {
+    padding: 50% 0 !important;
+  }
+  .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10), .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) {
+    width: calc(100% / 2) !important;
+  }
+  .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) .kb-gallery-image-contain {
+    padding: 33% 0 !important;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .items-especiales .wp-block-column .wp-block-image::before {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container {
     padding: 0 30px;
@@ -318,11 +352,17 @@ img {
     font-size: 28px;
     padding: 12px 30px;
   }
-}
-
-@media screen and (max-width: 781px) {
-  .items-especiales .wp-block-column .wp-block-image::before {
-    display: none;
+  .wp-block-kadence-advancedgallery .kb-gallery-ul .kadence-blocks-gallery-item {
+    width: 100% !important;
+  }
+  .wp-block-kadence-advancedgallery .kb-gallery-ul .kadence-blocks-gallery-item .kadence-blocks-gallery-item__caption {
+    font-size: 16px !important;
+  }
+  .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(9), .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10), .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) {
+    width: 100% !important;
+  }
+  .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(9) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(10) .kb-gallery-image-contain, .wp-block-kadence-advancedgallery.special .kb-gallery-ul .kadence-blocks-gallery-item:nth-child(11) .kb-gallery-image-contain {
+    padding: 50% 0 !important;
   }
 }
 
