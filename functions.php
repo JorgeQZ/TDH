@@ -113,7 +113,7 @@ function thd_theme_name_scripts()
     wp_enqueue_script('owl.carousel.min.js', get_template_directory_uri().'/js/owl.carousel.min.js', array('jquery'), get_stylesheet_directory() . '/js/owl.carousel.min.js', false);
     endif;
 
-    if (is_page_template('page-proyectos-sustentables.php')):
+    if (is_page_template('proyectos-sustentables.php')):
         wp_enqueue_style('proyectos-sustentables', get_template_directory_uri().'/css/proyectos-sustentables.css', array(), get_template_directory_uri().'/css/proyectos-sustentables.css') ;
     endif;
 }
@@ -319,7 +319,7 @@ add_action('init', 'thd_register_tax_proy_sust');
 
 function load_proy_sustentables()
 {
-    if (is_page_template('page-proyectos-sustentables.php')):
+    if (is_page_template('proyectos-sustentables.php')):
 
         wp_enqueue_script('proyectos-sustentables', get_template_directory_uri().'/js/proyectos_sustentables.js', array('jquery'), '1.0', true);
 

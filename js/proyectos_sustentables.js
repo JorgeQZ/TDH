@@ -64,9 +64,9 @@
         items.forEach(item => {
             let item_html;
             if (item.featured_image) {
-                item_html = '<a class="item animation" href="' + item.url + '" style="background-image: url(' + item.featured_image + ');"><div class="item-title">' + item.title + '<div class="link"></div></div></a>';
+                item_html = '<a class="item animation" href="' + item.url + '" style="background-image: url(' + item.featured_image + ');"><div class="overlay"></div><div class="item-title">' + item.title + '<div class="link"></div></div></a>';
             } else {
-                item_html = '<a class="item animation" href="' + item.url + '"><div class="item-title">' + item.title + '<div class="link"></div></div></a>';
+                item_html = '<a class="item animation" href="' + item.url + '"><div class="overlay"></div><div class="item-title">' + item.title + '<div class="link"></div></div></a>';
             }
             $('#grid-proy-posts').append(item_html);
 
