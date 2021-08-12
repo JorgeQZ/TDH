@@ -807,9 +807,10 @@ footer .grid-columns .column {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  min-width: 350px;
+  min-width: 280px;
   max-width: 33%;
   padding: 10px;
+  overflow-wrap: break-word;
 }
 
 footer .grid-columns .column:first-child {

@@ -24,9 +24,10 @@ footer {
 
         .column {
             width: fit-content;
-            min-width: 350px;
+            min-width: 280px;
             max-width: 33%;
             padding: 10px;
+            overflow-wrap: break-word;
 
             &:first-child {
                 min-width: 200px;
