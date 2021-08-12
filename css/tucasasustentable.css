@@ -21,7 +21,7 @@
 }
 
 .contenedor-global-renders .contenedor-espacio .cont-buttons button {
-  background: #ff671d;
+  background: #709303;
   color: white;
   padding: 10px 20px;
   border: 0;
@@ -35,7 +35,7 @@
 }
 
 .contenedor-global-renders .contenedor-espacio .cont-buttons button.active {
-  background: #709303;
+  background: #ff671d;
 }
 
 .contenedor-global-renders .contenedor-espacio .cont-buttons button.active:hover {

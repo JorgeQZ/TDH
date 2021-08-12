@@ -12,7 +12,9 @@
         ?>
         <div class="contenedor-eco_opcion">
             <div class="cont-icono">
-                <img src="<?php echo the_field("icono"); ?>" alt="">
+                <a href="<?php the_permalink(); ?>">
+                    <img src="<?php echo the_field("icono"); ?>" alt="">
+                </a>
                 <div class="cont-info">
                     <h2> <?php the_title(); ?> </h2>
                     <p>
