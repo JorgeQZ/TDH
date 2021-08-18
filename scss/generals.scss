@@ -295,6 +295,14 @@ img{
     }
 }
 
+@media screen and (max-width: 899px) {
+
+    rs-fullwidth-wrap{
+        padding-top: 121px;
+    }
+
+}
+
 
 @media screen and (max-width: 991px) {
     
@@ -346,6 +354,7 @@ img{
 }
 
 @media screen and (max-width: 767px) {
+
     .container {
         padding: 0 30px;
     }

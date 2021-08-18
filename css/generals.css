@@ -320,6 +320,12 @@ img {
   letter-spacing: 1px;
 }
 
+@media screen and (max-width: 899px) {
+  rs-fullwidth-wrap {
+    padding-top: 121px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .items-especiales .wp-block-column .wp-block-image::before {
     display: none;
@@ -842,6 +848,12 @@ footer .menu-footer-container ul {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  footer .grid-columns {
+    padding: 30px 0;
+  }
 }
 
 .social-container {
